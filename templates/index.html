@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure E2EE Chat</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+
+    <div class="brand">
+
+        <img
+            src="/static/logo.png"
+            alt="AegisChat Logo"
+            class="logo">
+
+        <div>
+
+            <h1>AegisChat</h1>
+
+            <p>End-to-End Encrypted Messaging</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="main-layout">
+
+    <div class="sidebar">
+
+        <div class="card">
+            <h3>👤 Your Profile</h3>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username">
+
+            <button onclick="registerUser()">
+                Join Chat
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>🟢 Online Users</h3>
+
+            <div id="users">
+                Waiting for users...
+            </div>
+        </div>
+
+    </div>
+
+    <div class="chat-section">
+
+        <div class="chat-header">
+
+            <h2>Chat Window</h2>
+
+            <div class="badge">
+                🔐 E2EE Enabled
+            </div>
+
+        </div>
+
+        <div id="chat"></div>
+
+        <div class="message-area">
+
+            <input
+                type="text"
+                id="receiver"
+                placeholder="Receiver Username">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Type your message...">
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/crypto.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
